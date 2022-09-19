@@ -37,6 +37,6 @@ class DefaultsParser
      * E.g. "my-example" becomes "MyExample".
      */
     private function camelCase(string $input): string {
-        return str_replace(' ', '', ucwords(str_replace(['-', '_', '.'], ' ', $string)));
+        return str_replace(' ', '', ucwords(str_replace(['-', '_', '.'], ' ', $input)));
     }
 }
