@@ -43,11 +43,7 @@ abstract class TestsGenerator extends BaseGenerator implements GeneratorInterfac
                     continue;
                 }
 
-                if (empty($route->{'x-lg-handler'})) {
-                    continue;
-                }
-
-                $handler = $this->routeHandlerParser->parse($route->{'x-lg-handler'});
+                $handler = $this->sensibleDefaultsParser->parse($method, $route);
 
                 try {
                     $newNamespace = $this->getReplacedNamespace($handler->namespace, $replaceFromNamespace, $replaceToNamespace);

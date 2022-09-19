@@ -23,8 +23,8 @@ class RoutesGenerator extends BaseGenerator implements GeneratorInterface
         $paths = $openApiData->paths ?: [];
         foreach ($paths as $path => $routes) {
             foreach ($routes as $method => $route) {
-                $handler = $route->{'x-lg-handler'} ?? null;
-                $routeName = $route->{'x-lg-route-name'} ?? null;
+                $handler = $this->sensibleDefaultsParser->parse($method, $route);
+                $routeName = $route->{'operationId'};
                 $routeMiddleware = $route->{'x-lg-middleware'} ?? null;
                 $routeWithoutMiddleware = $route->{'x-lg-without-middleware'} ?? null;
                 if ($handler) {

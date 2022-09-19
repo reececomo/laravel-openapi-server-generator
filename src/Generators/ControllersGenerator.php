@@ -31,11 +31,7 @@ class ControllersGenerator extends BaseGenerator implements GeneratorInterface
                     continue;
                 }
 
-                if (empty($route->{'x-lg-handler'})) {
-                    continue;
-                }
-
-                $handler = $this->routeHandlerParser->parse($route->{'x-lg-handler'});
+                $handler = $this->sensibleDefaultsParser->parse($method, $route);
                 $fqcn = $handler->fqcn;
                 if (!$fqcn) {
                     continue;

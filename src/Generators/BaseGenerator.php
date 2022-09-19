@@ -20,6 +20,7 @@ class BaseGenerator
         protected TemplatesManager $templatesManager,
         protected PSR4PathConverter $psr4PathConverter,
         protected RouteHandlerParser $routeHandlerParser,
+        protected SensibleDefaultsParser $sensibleDefaultsParser,
         protected TypesMapper $typesMapper,
         protected PhpDocGenerator $phpDocGenerator,
     ) {
