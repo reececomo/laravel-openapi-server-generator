@@ -38,7 +38,7 @@ class RequestsGenerator extends BaseGenerator implements GeneratorInterface
                     continue;
                 }
 
-                $handler = $this->defaultsParser->getController($method, $route);
+                $handler = $this->defaultsParser->getController($route);
 
                 try {
                     $newNamespace = $this->getReplacedNamespace($handler->namespace, $replaceFromNamespace, $replaceToNamespace);

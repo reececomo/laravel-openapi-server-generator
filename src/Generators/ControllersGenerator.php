@@ -31,7 +31,7 @@ class ControllersGenerator extends BaseGenerator implements GeneratorInterface
                     continue;
                 }
 
-                $handler = $this->defaultsParser->getController($method, $route);
+                $handler = $this->defaultsParser->getController($route);
                 $fqcn = $handler->fqcn;
                 if (!$fqcn) {
                     continue;
