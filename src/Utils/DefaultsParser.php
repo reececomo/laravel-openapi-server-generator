@@ -2,6 +2,8 @@
 
 namespace Ensi\LaravelOpenApiServerGenerator\Utils;
 
+use Ensi\LaravelOpenApiServerGenerator\DTO\ParsedRouteHandler;
+
 class DefaultsParser
 {
     /**
@@ -9,6 +11,7 @@ class DefaultsParser
      */
     public function getController($method, $route) {
         $group = $route->tags[0] ?? "API";
+        $class = $this->camelCase($group) . "Controller";
         $namespace = "\\App\\Http\\Controllers";
 
         return new ParsedRouteHandler(
