@@ -43,7 +43,7 @@ abstract class TestsGenerator extends BaseGenerator implements GeneratorInterfac
                     continue;
                 }
 
-                $handler = $this->sensibleDefaultsParser->parse($method, $route);
+                $handler = $this->defaultsParser->parse($method, $route);
 
                 try {
                     $newNamespace = $this->getReplacedNamespace($handler->namespace, $replaceFromNamespace, $replaceToNamespace);

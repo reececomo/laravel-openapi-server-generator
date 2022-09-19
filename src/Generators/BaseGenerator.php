@@ -5,6 +5,7 @@ namespace Ensi\LaravelOpenApiServerGenerator\Generators;
 use Ensi\LaravelOpenApiServerGenerator\Utils\PhpDocGenerator;
 use Ensi\LaravelOpenApiServerGenerator\Utils\PSR4PathConverter;
 use Ensi\LaravelOpenApiServerGenerator\Utils\RouteHandlerParser;
+use Ensi\LaravelOpenApiServerGenerator\Utils\DefaultsParser;
 use Ensi\LaravelOpenApiServerGenerator\Utils\TemplatesManager;
 use Ensi\LaravelOpenApiServerGenerator\Utils\TypesMapper;
 use Illuminate\Filesystem\Filesystem;
@@ -20,7 +21,7 @@ class BaseGenerator
         protected TemplatesManager $templatesManager,
         protected PSR4PathConverter $psr4PathConverter,
         protected RouteHandlerParser $routeHandlerParser,
-        protected SensibleDefaultsParser $sensibleDefaultsParser,
+        protected DefaultsParser $defaultsParser,
         protected TypesMapper $typesMapper,
         protected PhpDocGenerator $phpDocGenerator,
     ) {

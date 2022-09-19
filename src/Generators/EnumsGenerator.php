@@ -62,7 +62,7 @@ class EnumsGenerator extends BaseGenerator implements GeneratorInterface
         foreach ($schema->enum as $i => $enum) {
             $varName = $schema->{'x-enum-varnames'}[$i] ?? null;
             if ($varName === null) {
-                throw new LogicException("x-enum-varnames for enum \"{$enum}\" is not set");
+                $varName = $this->defaultsParser->getEnumVarname($enum);
             }
             $description = $schema->{'x-enum-descriptions'}[$i] ?? null;
             if ($description) {
