@@ -64,7 +64,7 @@ class OpenApi3Object
         }
         $validationsString = implode("\n            ", $validationStrings);
 
-        $enumString = "";
+        $enumsString = "";
         if ($enums) {
             $enumStrings = [];
             throw_unless(isset($options['enums']['namespace']), EnumsNamespaceMissingException::class);
