@@ -9,16 +9,16 @@ class DefaultsParser
     /**
      * Generate a sensible default controller for a route.
      */
-    public function getController($method, $route) {
+    public function getController($route) {
         $group = $route->tags[0] ?? "API";
         $class = $this->camelCase($group) . "Controller";
-        $namespace = "\\App\\Http\\Controllers";
+        $namespace = "App\\Http\\Controllers";
 
         return new ParsedRouteHandler(
             namespace: $namespace,
             class: $this->camelCase($group),
             fqcn: "$namespace\\$group",
-            method: $method,
+            method: $route->operationId,
         );
     }
 
